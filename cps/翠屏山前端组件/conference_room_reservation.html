@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>会议室预约</title>
+		<link rel="stylesheet" type="text/css" href="css/conference_room_reservation.css"/>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script src="js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/conference_room_reservation.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/datePicker.js"></script>
+		<script type="text/javascript" src="js/timemgr.js" ></script>
+	</head>
+	<body>
+	<form action="" id="dz_commentForm" method="post">
+			<!--会议室预约开始（第一个页面开始）-->
+			<div class="dz_form1">
+				<h3>会议室预约</h3>
+				<div class="dz_form1_div">
+					<label for="dz_username">预约人姓名：</label>
+						<input id="dz_username" name="dz_username" onkeyup="this.value=this.value.replace(/\s+/g,'')" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_phone">手机：</label>
+	      				<input id="dz_phone" name="dz_phone" type="text" onkeyup="value=value.replace(/[^\d]/g,'')"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_meeting_title">会议标题：</label>
+	      				<input id="dz_meeting_title" name="dz_meeting_title" type="text" onkeyup="this.value=this.value.replace(/\s+/g,'')"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_starting_time">会议起始时间：</label>
+	      				<input id="datetimeStart" placeholder="会议起始时间" class="dz_starting"  name="dz_starting_time" onkeyup="this.value=this.value.replace(/\s+/g,'')" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_end_time">会议结束时间：</label>
+	      				<input id="datetimeEnd" class="dz_starting" name="dz_end_time"  onkeyup="this.value=this.value.replace(/\s+/g,'')" placeholder="会议结束时间" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_invitation_name">邀请函名称：</label>
+	      				<input id="dz_invitation_name" name="dz_invitation_name" onkeyup="this.value=this.value.replace(/\s+/g,'')" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_invitation_words">邀请语：</label>
+	      				<!--<input id="dz_invitation_words" name="dz_invitation_words" type="text"><i class="dz_i_style">*</i>-->
+	      				<textarea id="dz_invitation_words" name="dz_invitation_words" onkeyup="this.value=this.value.replace(/\s+/g,'')"></textarea><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_activity_time">活动开始时间：</label>
+	      				<input id="dz_activity_time1" name="dz_activity_time" onkeyup="this.value=this.value.replace(/\s+/g,'')" placeholder="活动开始时间" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_activity_time">活动结束时间：</label>
+	      				<input id="dz_activity_time2" name="dz_activity_time" onkeyup="this.value=this.value.replace(/\s+/g,'')" placeholder="活动结束时间" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_organizer">主办方：</label>
+	      				<input id="dz_organizer" name="dz_organizer" onkeyup="this.value=this.value.replace(/\s+/g,'')" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_organizer_phone">主办方联系电话：</label>
+	      				<input id="dz_organizer_phone" name="dz_organizer_phone" onkeyup="this.value=this.value.replace(/\s+/g,'')" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_event_location">活动地点：</label>
+	      				<input id="dz_event_location" name="dz_event_location" onkeyup="this.value=this.value.replace(/\s+/g,'')" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_activities_detailed_introduction">活动详细介绍：</label>
+	      				<!--<input id="dz_activities_detailed_introduction" name="dz_activities_detailed_introduction" type="text"><i class="dz_i_style">*</i>-->
+	      				<textarea id="dz_activities_detailed_introduction" onkeyup="this.value=this.value.replace(/\s+/g,'')" name="dz_activities_detailed_introduction"></textarea><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_invitation_share_title">邀请函分享标题：</label>
+	      				<input id="dz_invitation_share_title" name="dz_invitation_share_title" onkeyup="this.value=this.value.replace(/\s+/g,'')" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_invitation_share_description">邀请函分享描述：</label>
+	      				<input id="dz_invitation_share_description" onkeyup="this.value=this.value.replace(/\s+/g,'')" name="dz_invitation_share_description" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_sign_event_name">签到活动名称：</label>
+	      				<input id="dz_sign_event_name" onkeyup="this.value=this.value.replace(/\s+/g,'')" name="dz_sign_event_name" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_sign_event_share_title">签到活动分享标题：</label>
+	      				<input id="dz_sign_event_share_title" onkeyup="this.value=this.value.replace(/\s+/g,'')" name="dz_sign_event_share_title" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_Sign_share_description_activities">签到活动分享描述：</label>
+	      				<input id="dz_Sign_share_description_activities" onkeyup="this.value=this.value.replace(/\s+/g,'')" name="dz_Sign_share_description_activities" type="text"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_click_upload_meeting_process">点击上传会议流程：</label>
+	      				<input multiple  id="dz_click_upload_meeting_process"  name="dz_click_upload_meeting_process" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;---点击上传会议流程---" type="file"  accept="image/*"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_click_upload_seat_table">点击上传座位表：</label>
+	      				<input multiple  id="dz_click_upload_seat_table" name="dz_click_upload_seat_table" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;---点击上传会议流程---" type="file"  accept="image/*"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_invitation_share_map">邀请函分享图：</label>
+	      				<input multiple  id="dz_invitation_share_map" name="dz_invitation_share_map" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;---点击上传会议流程---" type="file"  accept="image/*"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_Sign_page_focus_map">签到页面焦点图：</label>
+	      				<input multiple  id="dz_Sign_page_focus_map" name="dz_Sign_page_focus_map" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;---点击上传会议流程---" type="file"  accept="image/*"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<label for="dz_Sign_event_sharing_map">签到活动分享图：</label>
+	      				<input multiple  id="dz_Sign_event_sharing_map" name="dz_Sign_event_sharing_map"  type="file"  accept="image/*"><i class="dz_i_style">*</i>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form1_div">
+					<input type="button" class="btn btn-info btn-lg" name="btn" id="btn" value="下一步" />
+				</div>
+			</div>
+			<!--会议室预约结束（第一个页面结束）-->
+			
+			<!--会议物品预约开始（第二个页面开始）-->
+			<div class="dz_form2">
+				<!--会议物品预约：会议物品预约开始-->
+				<h3>会议物品预约</h3>
+				<p class="dz_form2_p">
+					<span class="dz_form2_span"></span><span>会议室</span><span class="dz_form2_span"></span>
+				</p>
+				<div class="dz_form2_div dz_meeting_room">
+					<label class="dz_meeting_room_label1">1、</label>
+					<input class="dz_meeting_room_input" id="conferenceRoom" name="" type="text" maxlength="50">
+					<label class="dz_meeting_room_label2">会议室</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div dz_meeting_room">
+					<label class="dz_meeting_room_label1">2、场次：</label>
+					<select id="screenings" class="dz_meeting_room_select">
+						<option value="">请选择</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+					<label class="dz_meeting_room_label2">场</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+<!--					<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">使用日期：</label>
+					<input class="dz_use_date_input" id="dz_use_date_end" placeholder="结束使用日期" name="" type="text">
+					<input class="dz_use_date_input" id="dz_use_date_start" placeholder="开始使用日期" name="" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div dz_meeting_room">
+					<label class="dz_meeting_room_label1">3、会议桌型：</label>
+					<select name="" id="number" class="dz_conference_table_type">
+						<option value="">请选择</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+					<label class="dz_meeting_room_label2">人</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<input class="dz_ckeckbox_style" type="checkbox" name="boardroomType"  value="课桌式" />课桌式
+					<input class="dz_ckeckbox_style" type="checkbox" name="boardroomType" value="回字形" />回字形
+					<input class="dz_ckeckbox_style" type="checkbox" name="boardroomType"  value="剧场式" />剧场式
+					<input class="dz_ckeckbox_style" type="checkbox" name="boardroomType" value="岛屿式" />岛屿式
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">特殊要求：</label>
+					<textarea class="" id="boardroomRequire" maxlength="255"></textarea>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">4、免费项目：</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="freeProject"  value="便签纸" />便签纸
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="freeProject"  value="铅笔" />铅笔
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="freeProject"  value="录音" />录音
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="freeProject"  value="演讲台" />演讲台
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="freeProject" value="翻页笔" />翻页笔
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="freeProject" value="电脑" />电脑
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="freeProject" value="投票箱" />投票箱
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="freeProject" value="抽奖箱" />抽奖箱
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">5、收费项目：</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="chargeProject"  value="LED屏" />LED屏
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="chargeProject" value="电子会标" />电子会标
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="chargeProject" value="投影仪" />投影仪
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="chargeProject" value="会议拍照" />会议拍照
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="chargeProject" value="会议摄像" />会议摄像
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">6、增值项目：</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label>(1)各客水果，数量&nbsp;&nbsp;&nbsp;</label>
+					<input class="dz_meeting_room_input dz_valueadded_projects_input" type="text" maxlength="6" id="incrementProjectNumber"  onkeyup="this.value=this.value.replace(/\D/g,'')"  />
+					<label class="dz_meeting_room_label2">份</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<span id="boadroomFruit"></span>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">要求：</label>
+					<textarea class="" id="incrementRequire" maxlength="255"></textarea>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">到位时间：</label>
+					<input class="dz_time_place" id="dz_time_place_date" name="" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label>(2)现磨咖啡，数量&nbsp;&nbsp;&nbsp;</label>
+					<input class="dz_meeting_room_input dz_valueadded_projects_input" type="text" maxlength="6" id="coffeeNumber" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+					<label class="dz_meeting_room_label2">份</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<div id="boadroomCoffe"></div>
+					<!--<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="" id="" value="20" />20元/杯-->
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">要求：</label>
+					<textarea class="" id="coffeeRequire" maxlength="255"></textarea>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">到位时间：</label>
+					<input class="dz_time_place" id="dz_time_place_date2" name="" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label>(3)自助茶歇，数量&nbsp;&nbsp;&nbsp;</label>
+					<input class="dz_meeting_room_input dz_valueadded_projects_input" maxlength="6" type="text"  id="teaNumber" value=""  onkeyup="this.value=this.value.replace(/\D/g,'')" />
+					<label class="dz_meeting_room_label2">份</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<div id="boardroomTea"></div>
+					<!--<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="" id="" value="20元/份" />20元/份
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="" id="" value="30元/份" />30元/份
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="" id="" value="50元/份" />50元/份-->
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">要求：</label>
+					<textarea class="" id="teaRequire" maxlength="255"></textarea>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">到位时间：</label>
+					<input class="dz_time_place" id="dz_time_place_date3" name="" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label>(4)鲜花</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="flowertype" value="主席台" />主席台
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="flowertype"  value="签到台" />签到台
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="flowertype" value="演讲台" />演讲台
+					<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="flowertype"  value="嘉宾胸花" />嘉宾胸花
+	      			<div class="dz_clear"></div>
+				</div>
+				<!--会议物品预约：会议物品预约结束-->
+				<!--会议物品预约：客房开始-->
+				<p class="dz_form2_p">
+					<span class="dz_form2_span"></span><span>客房</span><span class="dz_form2_span"></span>
+				</p>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">1、使用日期及房间数量</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<table class="dz_form2_table" cellspacing="0" cellpadding="0">  
+				        <tr>  
+				            <td class="dz_form2_table_room" rowspan="2">
+				            	<span>房型</span>
+				            </td>  
+				            <td class="dz_form2_table_date" colspan="4">
+				            	日期
+				            </td>  
+				        </tr>  
+				        <tr>  
+				            <td>
+				            	&nbsp;<input class="dz_form2_table_input" type="text" name="" id="dz_room_date1" value="" />
+				            </td>  
+				            <td>
+				            	&nbsp;<input class="dz_form2_table_input" type="text" name="" id="dz_room_date2" value="" />
+				            </td>  
+				            <td>
+				            	&nbsp;<input class="dz_form2_table_input" type="text" name="" id="dz_room_date3" value="" />
+				            </td>  
+				            <td>
+				            	&nbsp;<input class="dz_form2_table_input" type="text" name="" id="dz_room_date4" value="" />
+				            </td>  
+				        </tr>  
+				        <tr class="dz_form2_table_tr">  
+				            <td>标间</td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text" name="" maxlength="6" id="standard_room1" onkeyup="this.value=this.value.replace(/\D/g,'')"   />
+				            </td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text" name="" maxlength="6"  id="standard_room2" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+				            </td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text" name="" maxlength="6" id="standard_room3" onkeyup="this.value=this.value.replace(/\D/g,'')"  />
+				            </td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text" name="" maxlength="6" id="standard_room4" onkeyup="this.value=this.value.replace(/\D/g,'')"  />
+				            </td>   
+				        </tr>   
+				        <tr class="dz_form2_table_tr">  
+				            <td>单间</td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text" id="single_room1" maxlength="6" onkeyup="this.value=this.value.replace(/\D/g,'')"  />
+				            </td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text"  id="single_room2" maxlength="6" onkeyup="this.value=this.value.replace(/\D/g,'')"  />
+				            </td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text"  id="single_room3" maxlength="6" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+				            </td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text" id="single_room4"  maxlength="6" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+				            </td>   
+				        </tr>   
+				        <tr class="dz_form2_table_tr">  
+				            <td>套间</td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text" id="suite_room1" maxlength="6" onkeyup="this.value=this.value.replace(/\D/g,'')"  />
+				            </td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text"  id="suite_room2" maxlength="6" onkeyup="this.value=this.value.replace(/\D/g,'')"  />
+				            </td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text"  id="suite_room3" maxlength="6"  onkeyup="this.value=this.value.replace(/\D/g,'')" />
+				            </td>  
+				            <td>
+				            	<input class="dz_form2_table_input" type="text"  id="suite_room4" maxlength="6" onkeyup="this.value=this.value.replace(/\D/g,'')"  />
+				            </td>   
+				        </tr>  
+				    </table>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">备注：</label>
+					<textarea class="" id="roomRequire" maxlength="255"></textarea>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<div id="roomToliet"></div>
+					<!--<label class="dz_use_date">2、洗漱用品(80元/起订)</label>-->
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">内容要求：</label>
+					<textarea class="" id="toiletRequire" maxlength="255"></textarea>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">配送时间：</label>
+					<input class="dz_time_place" id="dz_delivery_time" name="" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">3、水果</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<div id="roomfruit"></div>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">数量：</label>
+					<input class="dz_time_place" id="fruitNumber" maxlength="6" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" >
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">内容要求：</label>
+					<textarea class="" id="fruitRequire" maxlength="255"></textarea>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">配送时间：</label>
+					<input class="dz_time_place" id="dz_delivery_time2"  name="" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">4、退房时间：</label>
+					<input class="dz_time_place" id="dz_checkout_time" name="" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<!--会议物品预约：客房结束-->
+				<!--会议物品预约：用餐开始-->
+				<p class="dz_form2_p">
+					<span class="dz_form2_span"></span><span>用餐</span><span class="dz_form2_span"></span>
+				</p>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">用餐日期：</label>
+					<input class="dz_time_place" id="dz_meal_date" name="" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">自助餐(保底80人)：</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<div id="buffet"></div>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">数量：</label>
+					<input class="dz_time_place" id="buffetNumber" maxlength="6" name="" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" >
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">用餐日期：</label>
+					<input class="dz_time_place" id="dz_meal_date2" name="" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">会议宴请：</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<div id="meet"></div>
+	      			<div class="dz_clear"></div>
+				</div>
+			<!--  <div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<div id="meet2"></div>
+	      			<div class="dz_clear"></div>
+				</div>-->
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">数量：</label>
+					<input class="dz_time_place" id="dinnerNumber" maxlength="6" name="" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" >
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">1、其它项目</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="otherProject"  value="舞台(免费)" />
+						<span>舞台</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox1_span1"></span>
+						<span>免费</span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<input class="dz_ckeckbox_style dz_free_items" type="checkbox" name="otherProject"  value="话筒-领导讲话(免费)" />
+						<span>话筒(领导讲话)</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox1_span2"></span>
+						<span>免费</span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="maintable"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				
+				<!--会议物品预约：用餐结束-->
+				<!--会议物品预约：商务中心开始-->
+				<p class="dz_form2_p">
+					<span class="dz_form2_span"></span><span>商务中心</span><span class="dz_form2_span"></span>
+				</p>
+				<div class="dz_form2_div">
+					<!--<label class="dz_use_date">&nbsp;</label>-->
+					<label class="dz_use_date">会议名称：</label>
+					<input class="dz_time_place" id="meet_name" maxlength="45" type="text">
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+				
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd1"></span>
+						<span>横幅</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span1"></span>
+						<span id="price1"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd2"></span>
+						 <span>21米回头标</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span2"></span>
+						<span id="price2"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd3"></span>
+						<span>席卡</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span3"></span>
+						<span id="price3"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd4"></span>
+						<span>指示牌</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span4"></span>
+						<span id="price4"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+					<span id="cbd5"></span>
+						<span>签到牌</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span5"></span>
+						<span id="price5"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd6"></span>
+						<span>座位示意图</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span6"></span>
+						<span id="price6"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd7"></span>
+						<span>大厅电子显示屏</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span7"></span>
+					<span id="price7"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd8"></span>
+						<span>打印</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span8"></span>
+					<span id="price8"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd9"></span>
+						<span>复印</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span9"></span>
+						<span id="price9"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd10"></span>
+						<span>发传真</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span10"></span>
+						<span id="price10"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<p class="dz_form2_p dz_form2_ckeckbox">
+						<span id="cbd11"></span>
+						<span>收传真</span>
+						<span class="dz_form2_ckeckbox_span dz_form2_ckeckbox2_span11"></span>
+						<span id="price11"></span>
+					</p>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">文件袋(含笔记本、签字笔)</label>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<span id="filebag">
+						
+					</span>
+	      			<div class="dz_clear"></div>
+				</div>
+				<div class="dz_form2_div">
+					<label class="dz_use_date">&nbsp;</label>
+					<label class="dz_use_date">备注：</label>
+					<input class="dz_time_place" id="cdb_require"  type="text" maxlength="255">
+	      			<div class="dz_clear"></div>
+				</div>
+				<!--会议物品预约：商务中心-->
+				<div class="">
+					<input type="button" class="btn btn-success btn-lg" name="" id="btn3" value="提交表单" />
+					<input type="button" class="btn btn-warning btn-lg" name="" id="btn2" value="跳过" />
+				</div>
+				<div class="page2">
+					<p>您没有进行会议物品预约，是否直接进行会议预约提交？</p>
+					<input type="button" class="btn btn-success btn-lg" name="" id="btn4" value="是" />
+					<input type="button" class="btn btn-default btn-lg" name="" id="btn5" value="否" />
+				</div>
+			</div>
+			<!--会议物品预约结束（第二个页面结束）-->
+		</form>
+		<div class="zzc">
+			
+		</div>
+		<div id="institution_alert_add" class="alert alert-success institution_alert_style" style="width: 300px;">
+						<a href="#" class="close" data-dismiss="alert">&#10004;&nbsp;&nbsp;</a>
+						<strong>提交成功！</strong>
+		</div>
+		<div id="institution_alert_failed" class="alert alert-success institution_alert_style" style="width: 300px;">
+						<a href="#" class="close" data-dismiss="alert">&times;&nbsp;&nbsp;</a>
+						<strong>提交失败！</strong>
+		</div>
+		<div id="institution_alert_warning" class="alert alert-success institution_alert_style" style="width: 300px;">
+						<a href="#" class="close" data-dismiss="alert">&times;&nbsp;&nbsp;</a>
+						<strong>图片提交失败！</strong>
+		</div>		
+		<div id="institution_alert_error" class="alert alert-success institution_alert_style" style="width: 300px;">
+						<a href="#" class="close" data-dismiss="alert">&times;&nbsp;&nbsp;</a>
+						<strong>网络缓慢！请稍后再试！</strong>
+		</div>
+	</body>
+</html>

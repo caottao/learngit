@@ -1,0 +1,263 @@
+/*样式清除*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	
+}
+/* 公共样式中的默认超链接 */
+a{
+	text-decoration:none;color: #666666; cursor: pointer;
+}
+a:hover {
+	text-decoration: none;
+}
+body{
+	font-size:12px;font-family:'Microsoft YaHei';
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+.dz_clear{
+	content:''; display:block; clear:both;
+}
+
+
+/*会议室预约样式*/
+#dz_commentForm{
+	width:68%; margin-left: 5%;
+}
+.dz_form1{
+	/*position: relative;*/ /*display: none;*/
+}
+.dz_form1>h3,.dz_form2>h3{
+	text-align: center; line-height: 30px; font-size: 20px; margin-top: 20px;
+}
+.dz_form1_div,.dz_form2_div{
+	margin: 10px 0px; position: relative;
+}
+.dz_form1_div>label{
+	text-align: left; float: left; /*margin-left: 20px;*/ font-size: 14px; font-weight: 600;
+}
+.dz_i_style{
+	float: right; margin-right: 2px; color: red;
+	position: absolute; top: 5px; left: 38%;
+}
+.dz_form1_div>input{
+	float: right; /*margin-right: 20px;*/ border: 1px solid dodgerblue !important; width: 54%;
+}
+.dz_form1_div>textarea{
+	float: right; /*margin-right: 28px;*/ width: 54%; border: 1px solid dodgerblue !important;
+}
+/*.dz_starting{
+	width: 19.5%;
+}*/
+
+/*会议物品预约样式*/
+.dz_form2{
+	display: block;
+}
+.dz_form2_p{
+	text-align: center; margin: 20px auto; font-size: 18px; font-weight: 600; color: dodgerblue;
+	/*padding: 0px 2px;*/
+}
+.dz_form2_p>a{
+	padding: 0px 4px; display: inline-block; font-size: 18px; font-weight: 600; color: dodgerblue;
+}
+.dz_form2_span{
+	width: 38% !important; border: 1px solid #CCCCCC; display: inline-block !important; margin-bottom: 5px;
+}
+.dz_form2_div>label{
+	text-align: left; float: left; /*margin-left: 14px;*/ font-size: 14px; /*font-weight: 600;*/
+}
+.dz_form2_div>textarea{
+	float: right; /*margin-right: 28px;*/ width: 62%; border: 1px solid dodgerblue !important;
+}
+.dz_form2_div>input,.dz_form2_div>select{
+	float: right; /*margin-right: 28px;*/ border: 1px solid dodgerblue !important;
+}
+.dz_meeting_room_label2{
+	float: right !important; margin-left: 0px !important;
+}
+.dz_meeting_room_input{
+	float: left !important; margin-right: 0px !important; width: 75%;
+}
+.dz_meeting_room_select{
+	float: left !important; margin-right: 0px !important; width: 65%;
+}
+.dz_use_date_input{
+	width: 32%; margin-right: 10px;
+}
+.dz_conference_table_type{
+	float: left !important; margin-right: 0px !important; width: 58.5%;
+}
+.dz_ckeckbox_style{
+	float: none !important; margin-right: 10px !important; display: inline-block;
+	width: 40px; margin: 0px 2px 3px 10px !important;
+}
+/*.dz_free_items{
+	width: 10px !important;
+}*/
+.dz_valueadded_projects_input{
+	width: 49%;
+}
+.dz_time_place{
+	width: 63%;
+}
+.dz_form2_table{
+	width: 100%;
+}
+.dz_form2_table td{
+	width: 20%; line-height: 30px; border: 1px solid #CCCCCC; box-sizing: border-box;
+}
+.dz_form2_table_room>span{
+	position: absolute; top: 20%; left: 6%;
+}
+.dz_form2_table_date,.dz_form2_table_tr>td{
+	text-align: center;
+}
+.dz_form2_table_input{
+	width: 84%; border: 1px solid dodgerblue; margin-top: 10px;
+}
+.dz_form2_div>p>span{
+	color: #82878C;
+}
+.dz_form2_ckeckbox{
+	text-align: center; margin: 20px auto; font-size: 12px;
+	color: #82878C !important;
+}
+.dz_form2_ckeckbox>a{
+	padding: 0px 4px; display: inline-block; font-size: 12px;color: #82878C !important;
+	font-weight: normal !important;
+}
+.dz_form2_ckeckbox_span{
+	border: 1px dashed #CCCCCC; display: inline-block !important; margin-bottom: 5px;
+}
+.dz_form2_ckeckbox1_span1{
+	width: 52% !important; 
+}
+.dz_form2_ckeckbox1_span2{
+	width: 39% !important; 
+}
+.dz_form2_ckeckbox1_span3{
+	width: 25% !important; 
+}
+.dz_form2_ckeckbox2_span1{
+	width: 53% !important; 
+}
+.dz_form2_ckeckbox2_span2{
+	width: 43% !important; 
+}
+.dz_form2_ckeckbox2_span3{
+	width: 52% !important; 
+}
+.dz_form2_ckeckbox2_span4{
+	width: 47% !important; 
+}
+.dz_form2_ckeckbox2_span5{
+	width: 47% !important; 
+}
+.dz_form2_ckeckbox2_span6{
+	width: 40% !important; 
+}
+.dz_form2_ckeckbox2_span7{
+	width: 40% !important; 
+}
+.dz_form2_ckeckbox2_span8{
+	width: 52% !important; 
+}
+.dz_form2_ckeckbox2_span9{
+	width: 52% !important; 
+}
+.dz_form2_ckeckbox2_span10{
+	width: 48% !important; 
+}
+.dz_form2_ckeckbox2_span11{
+	width: 49% !important; 
+}
+#btn3{
+	margin-left: 10%;
+}
+#btn2{
+	margin-left: 40%;
+}
+#btn4{
+	margin-left: 15%; /*margin-top: 14%;*/
+}
+#btn5{
+	margin-left: 40%; /*margin-top: 14%;*/
+}
+.page2{
+	width: 90%; height: 100px; border: 1px solid black; background: #ffffff;
+	position: fixed; top: 60%; display: none; z-index: 100; border-radius: 8px;
+}
+.page2>p{
+	font-size: 14px; line-height: 22px; padding: 10px 18px 0px 18px; text-indent: 26px;
+}
+
+/*验证文字样式*/
+label.error{
+	/*position: absolute;*/
+	display: block; text-align: left; color: red; font-size: 12px; font-weight: normal;
+	line-height: 1.4; /*margin-bottom: 0.5em;*/ width: 88%; float: left;
+	/*position: absolute; top: 5px; left: 46%;*/
+}
+/*遮罩层*/
+.zzc{
+	position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(0,0,0,0.7);
+	display: none; z-index: 10;
+}
+
+
+.institution_alert_style {
+	position: fixed; top: 75%; left: 40%; display: none; z-index: 99999;
+}
+.style {
+    width: 300px;
+    display: none;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.dz_starting::-webkit-input-placeholder{
+                font-size: 12px;
+            }
+.dz_use_date_input::-webkit-input-placeholder{
+                font-size: 12px;
+            }
+#dz_activity_time1::-webkit-input-placeholder{
+                font-size: 12px;
+            }
+#dz_activity_time2::-webkit-input-placeholder{
+                font-size: 12px;
+            }
