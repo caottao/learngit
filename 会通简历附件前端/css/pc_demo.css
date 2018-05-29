@@ -1,0 +1,131 @@
+/*样式清除*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	
+}
+/* 公共样式中的默认超链接 */
+a{
+	text-decoration:none;color: #666666; cursor: pointer;
+}
+a:hover {
+	text-decoration: none;
+}
+body{
+	font-size:12px;font-family:'Microsoft YaHei';
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+/*查询样式*/
+.dz_content{
+	width: 1200px; height:auto; border: #cccccc 1px solid; margin: 0 auto;
+}
+.dz_h3{
+	padding: 14px 0px 14px 20px; background: #0D69B4; color: #ffffff;
+}
+.dz_p_title{
+	font-size: 14px; color: #656766; margin: 14px 0px 28px 40px;
+}
+.dz_p_title span{
+	color: #989898;
+}
+.dz_content_title2{
+	font-size: 16px; color: #ffffff; margin: 14px 40px 14px 40px; border-bottom: 1px solid #cccccc;
+}
+.dz_content_title2 span{
+	 background: #0D69B4; display: inline-block; padding: 14px;
+}
+.dz_content_left,.dz_content_right{
+	width: 550px; height: auto; /*border: #cccccc 1px solid;*/ display: inline-block;
+	margin-left: 32px; box-sizing: border-box; vertical-align: top;
+}
+.dz_input{
+	margin: 10px 0px;
+}
+.dz_laber{
+	display: inline-block; width: 100px; height: 30px; line-height: 30px; text-align: right;
+}
+.dz_laber span{
+	display: inline-block; vertical-align: middle;
+}
+/*.dz_input select{
+	color: black;
+}*/
+
+.dz_p_btn{
+	background: #0D69B4; color: #ffffff; font-size: 14px;
+	width: 400px; height: 50px; line-height: 50px; margin: 0 auto; text-align: center; 
+	cursor: pointer; margin-top: 20px; margin-bottom: 20px;
+}
+
+
+
+/*input框样式*/
+.dz_text{
+	display: inline-block !important; /*margin-bottom: 20px;*/ border: 1px solid #ccc; padding: 7px 0px;
+    padding-left:5px; width: 350px; border-radius: 4px; margin-left: 0 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+}
+.dz_text:focus{
+    border-color: #66afe9; outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+/*按钮样式*/
+.dz_btn{
+	display: inline-block; /*width: 104px;*/ line-height: 36px; color: #ffffff; 
+	background: #cccccc; text-align: center; cursor: pointer; border: none; 
+	border-radius: 4px; padding: 0px 10px;
+}
+/*表单验证*/
+.error{
+	color: red; margin-left: 104px;
+	text-align: left; color: red; font-size: 12px; font-weight: normal;
+	line-height: 1.4; /*position: fixed;*/ display: block;
+}
+/*遮罩层*/
+.zzc{  
+    position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.7); display: none; z-index: 10;  
+}
+/*提示信息样式PC版*/
+.dz_title{
+	width: 460px; height: 200px; margin: 0 auto; border: 1px solid #CCCCCC; 
+	text-align: center;position: fixed; top: 30%; left: 35%; background: #ffffff;
+	display: none;
+}
+.dz_title p{
+	margin-top: 80px;
+}
+.dz_title_btn{
+	margin-top: 40px; display: inline-block;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title>职位申请表</title>
+		<link rel="stylesheet" type="text/css" href="css/pc_demo.css"/>
+		<link rel="stylesheet" type="text/css" href="css/laydate.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pc_demo.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="dz_content">
+			<h3 class="dz_h3">职位申请表</h3>
+			<p class="dz_p_title">基本信息：<span>请填写真实准确的个人信息</span></p>
+			<p class="dz_content_title2"><span>联系信息</span></p>
+			<form action="" method="" id="dz_form">
+				<div class="dz_content_left">
+					<div class="dz_input">
+						<label class="dz_laber"><span>*&nbsp;</span>姓名&nbsp;&nbsp;</label>
+						<input type="text" class="dz_text" maxlength="100" name="dz_name" id="dz_name" value="" placeholder="请输入姓名"/>
+					</div>
+					<div class="dz_input">
+						<label class="dz_laber"><span>*&nbsp;</span>性别&nbsp;&nbsp;</label>
+						<!--<input type="text" class="dz_text" name="" id="" value="" />-->
+						<select name="dz_sex" id="dz_sex" class="dz_text">
+							<option value="" selected="selected" disabled="disabled">请选择性别</option>
+							<option value="0" >男</option>
+							<option value="1" >女</option>
+						</select>
+					</div>
+					<div class="dz_input">
+						<label class="dz_laber"><span>*&nbsp;</span>手机&nbsp;&nbsp;</label>
+						<input type="text" class="dz_text" name="dz_phone" id="dz_phone" value="" placeholder="请输入手机"/>
+					</div>
+					<div class="dz_input">
+						<label class="dz_laber"><span>*&nbsp;</span>工作年限&nbsp;&nbsp;</label>
+						<input type="text" class="dz_text" maxlength="10" name="dz_year" maxlength="4" id="dz_year" value="" placeholder="请输入时间"/>
+					</div>
+					<div class="dz_input">
+						<label class="dz_laber"><span>*&nbsp;</span>期望薪资&nbsp;&nbsp;</label>
+						<input type="text" class="dz_text" maxlength="10" name="dz_salary" id="dz_salary" value="" placeholder="请输入您期望的薪资"/>
+					</div>
+					<div class="dz_input">
+						<label class="dz_laber"><span>*&nbsp;</span>简历上传&nbsp;&nbsp;</label>
+						<input type="file" class="dz_text" name="dz_file" id="dz_file" value="" />
+					</div>
+				</div>
+				<div class="dz_content_right">
+					<div class="dz_input">
+						<label class="dz_laber"><span>*</span>邮箱</label>
+						<input type="email" maxlength="100" class="dz_text" name="dz_email" id="dz_email" value="" placeholder="请输入邮箱"/>
+						<!--<input type="text" class="dz_text" name="dz_email" id="dz_email" value="" placeholder="请输入邮箱"/>-->
+					</div>
+					<div class="dz_input">
+						<label class="dz_laber"><span>*</span>籍贯</label>
+						<input type="text" class="dz_text" maxlength="100" name="dz_origin" id="dz_origin" value="" placeholder="请输入籍贯"/>
+					</div>
+					<div class="dz_input">
+						<label class="dz_laber"><span>*</span>应聘岗位</label>
+						<input type="text" class="dz_text" maxlength="50" name="dz_post" id="dz_post" value="" placeholder="请输入职位名称"/>
+					</div>
+					<div class="dz_input">
+						<label class="dz_laber"><span>*</span>到岗时间</label>
+						<input type="text" class="dz_text" name="dz_time" id="dz_time" value="" placeholder="请输入到岗时间"/>
+					</div>
+				</div>
+			</form>
+			<p class="dz_p_btn">提交</p>
+			<!-- 遮罩层 -->
+			<div class="zzc">
+				<!--提示信息-->
+				<div class="dz_title">
+					<p id="dz_title_center"></p>
+					<span style="width: 104px;" class="dz_btn dz_title_btn dz_title_btn_sure">确定</span>
+					<!--<span style="width: 104px;" class="dz_btn dz_title_btn">取消</span>-->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
